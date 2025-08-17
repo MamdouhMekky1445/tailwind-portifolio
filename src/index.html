@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <title>Portfolio – Tailwind v4</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./images/favicon_with_white_bg.svg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./css/output.css"
+    />
+  </head>
+  <body class="bg-white text-zinc-900 antialiased font-[roboto]">
+    <!-- ===== Navbar ===== -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200"
+    >
+      <nav class="mx-auto max-w-7xl px-4 laptop:px-6">
+        <!-- Top row -->
+        <div class="h-16 flex items-center justify-between gap-4">
+          <!-- Left: Brand -->
+          <a
+            href="#"
+            class="flex items-center gap-2 font-semibold"
+          >
+            <span class="text-lg">Material Tailwind</span>
+          </a>
+
+          <!-- ADDED: Desktop Middle links (hidden on mobile) -->
+          <ul
+            class="hidden laptop:flex items-center gap-8 text-sm text-zinc-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900 flex items-center gap-2"
+              >
+                <img
+                  src="images/download (17).svg"
+                  alt="Page Icon"
+                  class="w-4 h-4"
+                />
+                Page
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900 flex items-center gap-2"
+              >
+                <img
+                  src="images/download (16).svg"
+                  alt="Account Icon"
+                  class="w-4 h-4"
+                />
+                Account
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900 flex items-center gap-2"
+              >
+                <img
+                  src="images/download (15).svg"
+                  alt="Docs Icon"
+                  class="w-4 h-4"
+                />
+                Docs
+              </a>
+            </li>
+          </ul>
+
+          <!-- ADDED: Desktop Right actions (hidden on mobile) -->
+          <div class="hidden laptop:flex items-center gap-4">
+            <a
+              href="#"
+              class="text-sm hover:text-zinc-900"
+              >Sign In</a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-[var(--shadow-soft)] bg-zinc-900 text-white hover:opacity-90"
+            >
+              BLOCKS
+            </a>
+          </div>
+
+          <!-- Mobile toggle -->
+          <button
+            id="navToggle"
+            class="laptop:hidden inline-flex items-center justify-center rounded-lg p-2 border border-zinc-300 hover:bg-zinc-50"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <!-- Hamburger -->
+            <span
+              id="iconBars"
+              aria-hidden="true"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </span>
+            <!-- Close (X) -->
+            <span
+              id="iconClose"
+              class="hidden"
+              aria-hidden="true"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 6l12 12M18 6l-12 12" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <!-- Mobile divider under brand -->
+        <hr class="laptop:hidden border-zinc-200" />
+
+        <!-- Mobile menu -->
+        <div
+          id="mobileMenu"
+          class="laptop:hidden hidden pb-4"
+        >
+          <ul class="flex flex-col gap-4 pt-4 text-base text-zinc-800">
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-3 rounded-lg px-2 py-2 hover:bg-zinc-50"
+              >
+                <!-- icon -->
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="text-zinc-900"
+                >
+                  <path d="M3 5h18v4H3zM3 13h18v6H3z" />
+                </svg>
+                Page
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-3 rounded-lg px-2 py-2 hover:bg-zinc-50"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="text-zinc-900"
+                >
+                  <path
+                    d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4Z"
+                  />
+                </svg>
+                Account
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-3 rounded-lg px-2 py-2 hover:bg-zinc-50"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="text-zinc-900"
+                >
+                  <path d="M4 4h16v16H4zM8 8h8v2H8zM8 12h8v2H8z" />
+                </svg>
+                Docs
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-6 flex items-center gap-4">
+            <a
+              href="#"
+              class="text-sm font-semibold tracking-wide"
+              >SIGN IN</a
+            >
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-[var(--shadow-soft)] bg-zinc-900 text-white hover:opacity-90"
+            >
+              BLOCKS
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <main class="mx-auto max-w-7xl px-4 laptop:px-4">
+      <!-- CHANGED: more vertical space + taller min-height -->
+      <section
+        class="py-20 laptop:py-18 grid gap-12 laptop:grid-cols-2 items-center laptop:min-h-[80vh]"
+      >
+        <!-- Right image (kept FIRST in DOM so it shows first on mobile) -->
+        <div class="relative order-1 laptop:order-2">
+          <!-- Optimized hero image (best of both) -->
+          <img
+            src="./images/imgi_12_avatar1.jpg"
+            alt="Portrait"
+            width="1024"
+            height="1024"
+            decoding="async"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-[36rem] object-cover object-bottom rounded-[var(--radius-card)] shadow-[var(--shadow-soft)]"
+          />
+
+          <!-- CHANGED: give the image a fixed desktop height to reveal more  -->
+        </div>
+        <!-- Left content -->
+        <div class="order-2 laptop:order-1">
+          <h1
+            class="text-4xl laptop:text-5xl font-extrabold leading-tight tracking-tight"
+          >
+            Welcome to my Web Development Portofolio!
+          </h1>
+          <p class="mt-4 text-lg text-zinc-600 max-w-prose">
+            I'm Lily Smith, a passionate web developer based in USA. Here,
+            you'll get a glimpse of my journey in the world of web development,
+            where creativity meets functionality.
+          </p>
+
+          <!-- Email form (styled only) -->
+          <form
+            class="mt-8 max-w-xl"
+            onsubmit="return false;"
+          >
+            <label class="block text-sm font-medium text-zinc-700 mb-2"
+              >Your email</label
+            >
+            <div class="flex gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-900/20"
+              />
+              <button
+                class="shrink-0 rounded-xl px-5 py-3 font-semibold bg-zinc-900 text-white uppercase tracking-wide shadow-[var(--shadow-soft)] hover:opacity-90"
+              >
+                Require Offer
+              </button>
+            </div>
+            <p class="mt-2 text-sm text-zinc-500">
+              Read my
+              <a
+                href="#"
+                class="underline"
+                >Terms and Conditions</a
+              >
+            </p>
+          </form>
+        </div>
+      </section>
+      <!-- ===== Clients ===== -->
+      <section
+        aria-label="Clients"
+        class="py-16 laptop:py-20"
+      >
+        <div class="mx-auto max-w-7xl px-4 laptop:px-6">
+          <h3
+            class="text-center text-lg font-semibold tracking-wide text-zinc-700"
+          >
+            My awesome clients
+          </h3>
+
+          <!-- Row of logos -->
+          <ul
+            class="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-10 opacity-90 [@media(prefers-reduced-motion:no-preference)]:transition-opacity hover:opacity-100"
+          >
+            <li>
+              <img
+                src="./images/imgi_2_logo-coinbase.svg"
+                alt="Coinbase"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/imgi_3_logo-spotify.svg"
+                alt="Spotify"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/imgi_4_logo-pinterest.svg"
+                alt="Pinterest"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/imgi_5_logo-google.svg"
+                alt="Google"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/imgi_6_logo-amazon.svg"
+                alt="Amazon"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/imgi_7_logo-netflix.svg"
+                alt="Netflix"
+                class="w-32 md:w-34 object-contain"
+                loading="lazy"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="py-20 px-4 bg-white text-center">
+        <div class="max-w-4xl mx-auto mb-16">
+          <h5
+            class="uppercase text-sm tracking-widest font-medium text-black-500 mb-2"
+          >
+            My Skills
+          </h5>
+          <h2 class="text-4xl font-bold mb-4">What I do</h2>
+          <p class="text-gray-600 text-lg">
+            I'm not just a developer; I'm a digital dreamweaver. Crafting
+            immersive online experiences is not just a job but my calling.
+            <br />
+            Discover below how I can help you.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto"
+        >
+          <!-- Skill 1 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-border-all"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">
+              Frontend Web Development:
+            </h3>
+            <p class="text-gray-500 text-sm">
+              Creating beautiful and functional web experiences is my forte.
+              Using the latest technologies and best practices, I design and
+              build websites that captivate and engage users.
+            </p>
+          </div>
+
+          <!-- Skill 2 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-fingerprint"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Mobile App Development</h3>
+            <p class="text-gray-500 text-sm">
+              I specialize in creating responsive and intuitive mobile apps that
+              work seamlessly across iOS & Android devices. From concept to
+              deployment, I handle every stage of the development process.
+            </p>
+          </div>
+
+          <!-- Skill 3 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Technology Stack</h3>
+            <p class="text-gray-500 text-sm">
+              I'm well-versed in the industry's most popular frontend
+              technologies, including HTML5, CSS3, JavaScript, and frameworks
+              like React and React Native.
+            </p>
+          </div>
+
+          <!-- Skill 4 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-hashtag"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Web Optimization</h3>
+            <p class="text-gray-500 text-sm">
+              Performance matters. I optimize websites and apps for speed,
+              ensuring your users enjoy a fast and responsive experience, which
+              in turn boosts user satisfaction and SEO rankings.
+            </p>
+          </div>
+
+          <!-- Skill 5 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-compass"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">User-Centric Design</h3>
+            <p class="text-gray-500 text-sm">
+              My development goes hand-in-hand with an eye for design. I create
+              user interfaces that are not only functional but also
+              aesthetically pleasing, providing a seamless and enjoyable user
+              journey.
+            </p>
+          </div>
+
+          <!-- Skill 6 -->
+          <div class="flex flex-col items-center text-center px-4">
+            <div
+              class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-lg mb-4"
+            >
+              <i class="fas fa-bug"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">
+              Testing and Quality Assurance
+            </h3>
+            <p class="text-gray-500 text-sm">
+              I rigorously test and debug applications to guarantee a bug-free
+              and secure environment for users. Your peace of mind is as
+              important to me as the functionality of your project.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Whether you have a mobile app idea that needs to come to life or a
+            website that requires a facelift, I'm here to turn your digital
+            dreams into reality.
+          </p>
+        </div>
+
+        <div class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_8_blog-1.svg"
+              alt="Mobile App"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Mobile App Development</h3>
+            <p class="text-gray-500 mb-4">
+              Mobile app designed to help users discover and explore local
+              restaurants and cuisines.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_9_blog2.svg"
+              alt="Landing Page"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Landing Page Development</h3>
+            <p class="text-gray-500 mb-4">
+              Promotional landing page for a fitness website Summer Campaign.
+              Form development included.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_10_blog3.svg"
+              alt="Dashboard UI"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Dashboard UI Design</h3>
+            <p class="text-gray-500 mb-4">
+              Clean and responsive admin dashboard UI for a SaaS analytics
+              platform.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_11_blog4.svg"
+              alt="E-commerce Site"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">E-commerce Development</h3>
+            <p class="text-gray-500 mb-4">
+              E-commerce website offering access to the latest and greatest
+              gadgets and accessories.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_8_blog-1.svg"
+              alt="Mobile App"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Mobile App Development</h3>
+            <p class="text-gray-500 mb-4">
+              Mobile app designed to help users discover and explore local
+              restaurants and cuisines.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_9_blog2.svg"
+              alt="Landing Page"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Landing Page Development</h3>
+            <p class="text-gray-500 mb-4">
+              Promotional landing page for a fitness website Summer Campaign.
+              Form development included.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_10_blog3.svg"
+              alt="Dashboard UI"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">Dashboard UI Design</h3>
+            <p class="text-gray-500 mb-4">
+              Clean and responsive admin dashboard UI for a SaaS analytics
+              platform.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="text-left">
+            <img
+              src="images/imgi_11_blog4.svg"
+              alt="E-commerce Site"
+              class="rounded-lg shadow-md mb-4 w-full"
+            />
+            <h3 class="font-semibold text-xl mb-2">E-commerce Development</h3>
+            <p class="text-gray-500 mb-4">
+              E-commerce website offering access to the latest and greatest
+              gadgets and accessories.
+            </p>
+            <button
+              class="bg-black text-white text-xs px-4 py-2 rounded hover:bg-gray-800"
+            >
+              SEE DETAILS
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-16 px-6 flex flex-col lg:flex-row items-center justify-between gap-12"
+      >
+        <!-- Left Column -->
+        <div class="max-w-md text-center lg:text-left">
+          <h2 class="text-3xl font-bold mb-4">My Resume</h2>
+          <p class="text-gray-500 mb-6">
+            Highly skilled and creative Web Developer with 5+ years of
+            experience in crafting visually stunning and functionally robust
+            websites and web applications.
+          </p>
+          <button
+            class="bg-whtite-200 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-300 transition-all flex items-center gap-2 mx-auto lg:mx-0"
+          >
+            VIEW MORE
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="bg-black text-white p-3 rounded-md shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 3v18m4-14H7m8 4H7m8 4H7m8 4H7"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-500">Bachelor of Science in Computer Science</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="bg-black text-white p-3 rounded-md shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4h16v16H4z"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-500">Certified Web Developer</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="bg-black text-white p-3 rounded-md shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </div>
+            <p class="text-gray-500">
+              Frontend Framework Proficiency Certification
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-2">What Clients Say</h2>
+        <p class="text-gray-500 mb-12 max-w-xl mx-auto">
+          Discover what clients have to say about their experiences working with
+          me. My client's satisfaction is my greatest achievement!
+        </p>
+
+        <div
+          class="flex flex-col lg:flex-row items-center justify-center gap-10"
+        >
+          <!-- Text Column -->
+          <div
+            id="testimonialText"
+            class="max-w-md text-left"
+          >
+            <h3
+              id="testimonialTitle"
+              class="text-2xl font-bold mb-2"
+            >
+              Mobile App Development
+            </h3>
+            <p
+              id="testimonialDescription"
+              class="text-gray-600 mb-4"
+            >
+              I had the pleasure of working with Lily on a critical web
+              development project, and I can confidently say that their
+              expertise and professionalism exceeded my expectations.
+            </p>
+            <p
+              id="testimonialName"
+              class="font-semibold"
+            >
+              Michael - Technical Manager
+            </p>
+            <p
+              id="testimonialPosition"
+              class="text-sm text-gray-500"
+            >
+              Marketing @ APPLE INC.
+            </p>
+
+            <!-- Thumbnail Selectors -->
+            <div class="flex mt-4 gap-2">
+              <img
+                onclick="setTestimonial(0)"
+                src="./images/imgi_12_avatar1.jpg"
+                class="w-10 h-10 rounded cursor-pointer border-2 border-black-500"
+                id="thumb-0"
+              />
+              <img
+                onclick="setTestimonial(1)"
+                src="./images/imgi_13_avatar2.jpg"
+                class="w-10 h-10 rounded cursor-pointer opacity-50 hover:opacity-100"
+                id="thumb-1"
+              />
+              <img
+                onclick="setTestimonial(2)"
+                src="./images/imgi_14_avatar3.jpg"
+                class="w-10 h-10 rounded cursor-pointer opacity-50 hover:opacity-100"
+                id="thumb-2"
+              />
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div>
+            <img
+              id="testimonialImage"
+              src="./images/imgi_12_avatar1.jpg"
+              class="rounded w-80 h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <!-- Subtitle -->
+          <p class="text-sm font-semibold text-gray-500 uppercase mb-2">
+            Popular Clients
+          </p>
+
+          <!-- Headline -->
+          <h2 class="text-2xl sm:text-4xl font-bold text-gray-800 mb-8">
+            Trusted by over 10,000+ <br class="sm:hidden" /><br />
+            clients
+          </h2>
+
+          <!-- Client Logos -->
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 grayscale opacity-80"
+          >
+            <img
+              src="./images/imgi_2_logo-coinbase.svg"
+              alt="Coinbase"
+              class="w-32 md:w-34 object-contain"
+            />
+            <img
+              src="./images/imgi_3_logo-spotify.svg"
+              alt="Spotify"
+              class="w-32 md:w-34 object-contain"
+            />
+            <img
+              src="./images/imgi_4_logo-pinterest.svg"
+              alt="Pinterest"
+              class="w-32 md:w-34 object-contain"
+            />
+            <img
+              src="./images/imgi_5_logo-google.svg"
+              alt="Google"
+              class="w-32 md:w-34 object-contain"
+            />
+            <img
+              src="./images/imgi_6_logo-amazon.svg"
+              alt="Amazon"
+              class="w-32 md:w-34 object-contain"
+            />
+            <img
+              src="./images/imgi_7_logo-netflix.svg"
+              alt="Netflix"
+              class="w-32 md:w-34 object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="py-20 bg-white"
+      >
+        <div class="max-w-7xl mx-auto px-4 laptop:px-6">
+          <!-- Section Header -->
+          <div class="text-center mb-12">
+            <h2 class="text-5xl font-bold text-zinc-900">Contact Us</h2>
+            <p class="mt-4 text-zinc-500 max-w-xl mx-auto">
+              Ready to get started? Feel free to reach out through the contact
+              form, and let's embark on a journey of innovation and success.
+            </p>
+          </div>
+
+          <!-- Contact Card -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-md overflow-hidden"
+          >
+            <!-- Left: Contact Info -->
+            <div class="bg-zinc-900 text-white p-15 flex flex-col gap-4">
+              <h3 class="text-xl font-semibold">Contact Information</h3>
+              <p class="text-sm text-zinc-400">
+                Fill up the form and our Team will get back to you within 24
+                hours.
+              </p>
+
+              <div class="flex items-center gap-3">
+                <i class="fas fa-phone text-white"></i>
+                <span class="font-bold text-white">+1(424) 535 3523</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <i class="fas fa-envelope text-white"></i>
+                <span class="font-bold text-white">hello@mail.com</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <i class="fas fa-ticket-alt text-white"></i>
+                <span class="font-bold text-white">Open Support Ticket</span>
+              </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <form class="p-8 space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-zinc-600"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="eg. Lucas"
+                    class="w-full border-b border-zinc-300 py-2 focus:outline-none focus:border-zinc-900"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-zinc-600"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="eg. Jones"
+                    class="w-full border-b border-zinc-300 py-2 focus:outline-none focus:border-zinc-900"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-zinc-600"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  placeholder="eg. lucas@mail.com"
+                  class="w-full border-b border-zinc-300 py-2 focus:outline-none focus:border-zinc-900"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-zinc-600 mb-2"
+                  >What are you interested on?</label
+                >
+                <div class="flex gap-4 text-sm text-zinc-600">
+                  <label
+                    ><input
+                      type="radio"
+                      name="interest"
+                      class="accent-zinc-900 mr-1"
+                      checked
+                    />
+                    Design</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="interest"
+                      class="accent-zinc-900 mr-1"
+                    />
+                    Development</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="interest"
+                      class="accent-zinc-900 mr-1"
+                    />
+                    Support</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="interest"
+                      class="accent-zinc-900 mr-1"
+                    />
+                    Other</label
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-zinc-600"
+                  >Your Message</label
+                >
+                <textarea
+                  rows="3"
+                  class="w-full border-b border-zinc-300 py-2 focus:outline-none focus:border-zinc-900"
+                ></textarea>
+              </div>
+
+              <div class="text-right">
+                <button
+                  type="submit"
+                  class="bg-zinc-900 text-white px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition"
+                >
+                  SEND MESSAGE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <a
+      href="https://www.material-tailwind.com"
+      target="_blank"
+      class="fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-md bg-zinc-900 px-3 py-1 text-xs font-semibold text-white shadow-lg transition hover:bg-white hover:text-zinc-900"
+    >
+      <span
+        class="inline-flex items-center justify-center w-4 h-4 rounded bg-white text-black text-[10px] font-bold transition-all group-hover:bg-zinc-900 group-hover:text-white"
+      >
+        m
+      </span>
+      MADE WITH MATERIAL TAILWIND
+    </a>
+
+    <footer class="border-t border-zinc-200 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 laptop:px-6 py-6 flex items-center justify-between"
+      >
+        <!-- Left Side: Copyright -->
+        <p class="text-sm text-zinc-500">
+          © 2025 Made with Material Tailwind by Creative Tim.
+        </p>
+
+        <!-- Right Side: Nav Links + Subscribe -->
+        <div class="flex items-center gap-6">
+          <!-- Nav Links -->
+          <ul class="flex gap-6 text-sm text-zinc-500">
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-zinc-900"
+                >Service</a
+              >
+            </li>
+          </ul>
+
+          <!-- Subscribe Button -->
+          <button
+            class="px-4 py-2 rounded-md bg-zinc-900 text-white text-xs font-semibold hover:opacity-90 transition"
+          >
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tiny JS for the hamburger -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

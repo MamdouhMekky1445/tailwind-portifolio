@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Tailwind v4: custom breakpoint at 960px */
+@theme {
+  --breakpoint-laptop: 60rem; /* 960px */
+}
+
+/* optional: a couple of tokens we’ll reuse */
+@theme {
+  --radius-card: 1rem;
+  --shadow-soft: 0 10px 25px rgb(0 0 0 / 0.08);
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+}
